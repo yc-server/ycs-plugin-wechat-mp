@@ -11,10 +11,10 @@ export class Controller {
   // 公众号配置验证
   public index = async (ctx: IContext) => {
     try {
-      const signature = ctx.request.fields.signature;
-      const timestamp = ctx.request.fields.timestamp;
-      const nonce = ctx.request.fields.nonce;
-      const echostr = ctx.request.fields.echostr;
+      const signature = ctx.request.query.signature;
+      const timestamp = ctx.request.query.timestamp;
+      const nonce = ctx.request.query.nonce;
+      const echostr = ctx.request.query.echostr;
 
       /*  加密/校验流程如下： */
       // 1. 将token、timestamp、nonce三个参数进行字典序排序
