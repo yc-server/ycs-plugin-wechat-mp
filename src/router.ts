@@ -10,48 +10,45 @@ export async function setupRouter(app: Ycs): Promise<Router[]> {
   const routers: Router[] = [];
   const controller = new Controller(Model, config);
   routers.push(
-    Model.routes(
-      config.endpoint,
-      {
-        path: '/',
-        methods: ['get'],
-        controller: controller.index,
-        tags: ['__wechat_mp'],
-        summary: '公众号配置测试',
-        description: '公众号配置测试',
-        consumes: ['text/plain'],
-        produces: ['text/plain'],
-        parameters: [
-          {
-            type: 'string',
-            name: 'signature',
-            in: 'query'
-          },
-          {
-            type: 'string',
-            name: 'timestamp',
-            in: 'query'
-          },
-          {
-            type: 'string',
-            name: 'nonce',
-            in: 'query'
-          },
-          {
-            type: 'string',
-            name: 'echostr',
-            in: 'query'
-          },
-        ],
-        responses: {
-          200: {
-            description: 'Successful operation'
-          },
-          '4xx': Model.docSchema.response4xx,
-          '5xx': Model.docSchema.response5xx,
+    Model.routes(config.endpoint, {
+      path: '/',
+      methods: ['get'],
+      controller: controller.index,
+      tags: ['__wechat_mp'],
+      summary: '公众号配置测试',
+      description: '公众号配置测试',
+      consumes: ['text/plain'],
+      produces: ['text/plain'],
+      parameters: [
+        {
+          type: 'string',
+          name: 'signature',
+          in: 'query',
         },
+        {
+          type: 'string',
+          name: 'timestamp',
+          in: 'query',
+        },
+        {
+          type: 'string',
+          name: 'nonce',
+          in: 'query',
+        },
+        {
+          type: 'string',
+          name: 'echostr',
+          in: 'query',
+        },
+      ],
+      responses: {
+        200: {
+          description: 'Successful operation',
+        },
+        '4xx': Model.docSchema.response4xx,
+        '5xx': Model.docSchema.response5xx,
       },
-    )
+    })
   );
 
   return routers;
