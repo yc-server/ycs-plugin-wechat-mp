@@ -7,7 +7,7 @@ import * as crypto from 'crypto';
 import { IConfig } from './config';
 
 export class Controller {
-  constructor(private model: IModel, private config: IConfig) { }
+  constructor(private model: IModel, private config: IConfig) {}
   // 公众号配置验证
   public index = async (ctx: IContext) => {
     try {
