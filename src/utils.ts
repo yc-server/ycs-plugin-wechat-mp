@@ -20,7 +20,7 @@ export async function createToken(): Promise<string> {
     json: true,
   });
 
-  if (res.errcode) throw res.errmsg;
+  if (res.errcode) throw Boom.badRequest(res.errmsg);
   const entity: any = await WechatMpSession.create({
     name: 'access_token',
     value: res.access_token,
