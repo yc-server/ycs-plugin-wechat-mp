@@ -6,16 +6,16 @@ import { WechatMpSession } from './model';
 
 export async function createToken(): Promise<string> {
   const app = Ycs.instance;
-  const conf = app.config.wechatMp;
+  const conf: IConfig = app.config.wechatMp;
   const appId = conf.appId;
-  const appKey = conf.appKey;
+  const appSecret = conf.appSecret;
   const uri = `https://api.weixin.qq.com/cgi-bin/token`;
   const res = await rp({
     uri,
     qs: {
       grant_type: 'client_credential',
       appid: appId,
-      secret: appKey,
+      secret: appSecret,
     },
     json: true,
   });
