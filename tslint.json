@@ -8,6 +8,7 @@
     "no-angle-bracket-type-assertion": false,
     "no-bitwise": false,
     "no-console": false,
+    "no-implicit-any": false,
     "no-implicit-dependencies": false,
     "no-shadowed-variable": false,
     "no-string-literal": false,

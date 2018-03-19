@@ -1,6 +1,6 @@
 {
   "name": "ycs-plugin-wechat-mp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "ycs-plugin-wechat-mp",
   "license": "MIT",
   "repository": "https://github.com/yc-server/ycs-plugin-wechat-mp.git",
@@ -30,10 +30,14 @@
     "watch": "npm run build -- --watch",
     "watch:test": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
   "devDependencies": {
     "@types/jest": "^20.0.5",
     "@types/node": "^8.0.0",
+    "@types/request-promise": "^4.1.41",
     "@ycs/core": "^0.1.12",
     "colors": "^1.1.2",
     "coveralls": "^2.0.0",
